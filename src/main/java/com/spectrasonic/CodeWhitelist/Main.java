@@ -1,6 +1,7 @@
 package com.spectrasonic.CodeWhitelist;
 
 import com.spectrasonic.CodeWhitelist.Model.PlayerVerification;
+import com.spectrasonic.CodeWhitelist.Utils.MessageUtils;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -37,13 +38,14 @@ public class Main extends JavaPlugin implements Listener {
         playerVerification = new PlayerVerification(this);
 
         Bukkit.getPluginManager().registerEvents(this, this);
+        MessageUtils.sendStartupMessage(this);
 
-        getLogger().info(languageManager.getMessage("plugin_enabled"));
+
     }
 
     @Override
     public void onDisable() {
-        getLogger().info(languageManager.getMessage("plugin_disabled"));
+        MessageUtils.sendShutdownMessage(this);
     }
 
     @EventHandler
