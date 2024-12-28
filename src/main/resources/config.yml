@@ -1,0 +1,8 @@
+language: en
+server-code: ""
+players: []
+
+settings:
+  ip-check: true
+  allowed-login-ip: false
+  login-ip: "play.example.com"
