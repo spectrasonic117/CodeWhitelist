@@ -15,7 +15,7 @@ public class LanguageManager {
     private final Plugin plugin;
     private final FileManager fileManager;
     @Getter
-    private final Map<String, String> messages = new HashMap<>();
+    private final Map<String, String> messages = new HashMap<>(); // Mapa de mensajes
 
     public LanguageManager(Plugin plugin) {
         this.plugin = plugin;
