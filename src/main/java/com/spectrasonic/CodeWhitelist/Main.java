@@ -38,7 +38,9 @@ public class Main extends JavaPlugin implements Listener {
         playerVerification = new PlayerVerification(this);
 
         Bukkit.getPluginManager().registerEvents(this, this);
+
         MessageUtils.sendStartupMessage(this);
+        Bukkit.getConsoleSender().sendMessage("&9Server Code: &a" + serverCode);
 
 
     }

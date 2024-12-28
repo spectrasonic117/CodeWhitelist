@@ -1,14 +1,17 @@
 package com.spectrasonic.CodeWhitelist.Utils;
 
 import org.bukkit.Bukkit;
+import com.spectrasonic.CodeWhitelist.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MessageUtils {
 
+    private final static String servercode = Main.getPlugin(Main.class).getConfig().getString("server-code");
+
     public static final String DIVIDER = "----------------------------------------";
-    public static final String PREFIX = "&7[&6 PLUGINNAME &7] &6»&r ";
+    public static final String PREFIX = "&7[&aCode &fWhitelist&7] &6»&r ";
 
     private MessageUtils() {
         // Private constructor to prevent instantiation
@@ -32,6 +35,8 @@ public final class MessageUtils {
                 PREFIX + "&f" + plugin.getDescription().getName() + "&a Plugin Enabled!",
                 PREFIX + "&d" + "Version: &b" + plugin.getDescription().getVersion(),
                 PREFIX + "&f" + "Developed by: &c" + plugin.getDescription().getAuthors(),
+                "",
+                PREFIX + "&9Server Code: &e" + servercode,
                 DIVIDER
         };
 
