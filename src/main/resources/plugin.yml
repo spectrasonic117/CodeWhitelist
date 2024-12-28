@@ -4,6 +4,8 @@ main: com.spectrasonic.CodeWhitelist.Main
 api-version: '1.20'
 authors:
   - Spectrasonic
+resources:
+  - translate/en.yml
 commands:
   code:
     description: Verifies the player's code.

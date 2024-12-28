@@ -13,12 +13,29 @@ import java.util.Objects;
 
 public class LanguageManager {
     private final Plugin plugin;
+    private final FileManager fileManager;
     @Getter
     private final Map<String, String> messages = new HashMap<>();
 
     public LanguageManager(Plugin plugin) {
         this.plugin = plugin;
+        this.fileManager = new FileManager(plugin);
+        setupLanguageFiles();
         loadLanguage();
+    }
+
+    /**
+     * Configura los archivos de idioma necesarios
+     */
+    private void setupLanguageFiles() {
+        // Crear el directorio de traducciones si no existe
+        File translateDir = new File(plugin.getDataFolder(), "translate");
+        if (!translateDir.exists()) {
+            translateDir.mkdirs();
+        }
+
+        // Crear el archivo de idioma inglés por defecto
+        fileManager.createFileFromResource("translate/en.yml");
     }
 
     public void loadLanguage() {
