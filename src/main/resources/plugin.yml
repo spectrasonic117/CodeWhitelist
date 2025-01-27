@@ -1,18 +1,20 @@
 name: CodeWhitelist
-version: '${version}'
+version: "${version}"
 main: com.spectrasonic.CodeWhitelist.Main
-api-version: '1.20'
+api-version: "1.20"
 authors:
-  - Spectrasonic
+    - Spectrasonic
 resources:
-  - translate/en.yml
+    - translate/en.yml
 commands:
-  code:
-    description: Verifies the player's code.
-    usage: /code <code>
-    permission: codewhitelist.command.code
-    permission-message: You don't have permission to use this command.
+    code:
+        description: Verifies the player's code.
+        usage: /code <code>
+        aliases: [cd, code]
+        permission: codewhitelist.command.code
+        permission-message: You don't have permission to use this command.
+
 permissions:
-  codewhitelist.command.code:
-    description: Allows the player to use the /code command.
-    default: true
+    codewhitelist.command.code:
+        description: Allows the player to use the /code command.
+        default: true
